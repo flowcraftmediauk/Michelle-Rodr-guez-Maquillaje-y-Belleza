@@ -1,7 +1,7 @@
 import {Camera, MapPin} from 'lucide-react';
 import {useState} from 'react';
 import {CLIENT_PROFILE} from '../data/clientContent';
-import {ParallaxMedia, RevealOnScroll} from './MotionPrimitives';
+import {EditorialHairline, ParallaxMedia, RevealOnScroll} from './MotionPrimitives';
 
 export function AboutSection() {
   const [imgFailed, setImgFailed] = useState(false);
@@ -13,9 +13,8 @@ export function AboutSection() {
     >
       <div className="mx-auto max-w-6xl px-5 sm:px-6 md:px-10">
         <div className="grid grid-cols-1 items-stretch gap-10 lg:grid-cols-12 lg:gap-14">
-          {/* Left: Rich luxury cosmetic editorial visual with scroll-linked parallax + reserved portrait inset */}
-          <RevealOnScroll className="lg:col-span-5" yOffset={24}>
-            <div className="relative overflow-hidden rounded-3xl border border-[#B77A7D]/25 bg-[#F3E6DA] shadow-[0_20px_50px_-24px_rgba(43,31,30,0.2)]">
+          <RevealOnScroll className="lg:col-span-5" yOffset={26}>
+            <div className="relative overflow-hidden rounded-3xl border border-[#B77A7D]/25 bg-[#F3E6DA] shadow-[0_20px_50px_-24px_rgba(43,31,30,0.2)] transition-shadow duration-500 hover:shadow-[0_28px_60px_-22px_rgba(43,31,30,0.28)]">
               <div className="aspect-[4/3] w-full overflow-hidden">
                 {!imgFailed ? (
                   <ParallaxMedia range={14} className="h-full w-full">
@@ -58,10 +57,9 @@ export function AboutSection() {
             </div>
           </RevealOnScroll>
 
-          {/* Right: Verified biography & approach */}
           <RevealOnScroll
             delay={0.08}
-            yOffset={24}
+            yOffset={26}
             className="flex flex-col justify-center lg:col-span-7"
           >
             <p className="text-xs font-medium tracking-wider text-[#8A4F53]">
@@ -70,6 +68,7 @@ export function AboutSection() {
             <h2 className="font-editorial mt-3 text-balance text-3xl font-medium leading-tight text-[#2B1F1E] sm:text-4xl md:text-[2.75rem]">
               Pasión por el maquillaje, el cuidado capilar y el aprendizaje constante
             </h2>
+            <EditorialHairline className="mt-4 bg-[#B77A7D]/70" delay={0.14} />
 
             <div className="mt-6 space-y-4 text-[0.95rem] leading-relaxed text-[#2B1F1E]/80 md:text-base">
               <p>

@@ -1,7 +1,8 @@
 import {ArrowUpRight, Check, Copy, Mail, MapPin, Phone} from 'lucide-react';
+import {AnimatePresence, motion} from 'motion/react';
 import {type FormEvent, useState} from 'react';
 import {CLIENT_PROFILE} from '../data/clientContent';
-import {RevealOnScroll} from './MotionPrimitives';
+import {EditorialHairline, RevealOnScroll} from './MotionPrimitives';
 import {FacebookIcon, InstagramIcon, YouTubeIcon} from './SocialIcons';
 
 export function SocialAndContactSection() {
@@ -58,7 +59,6 @@ export function SocialAndContactSection() {
     >
       <div className="mx-auto max-w-6xl px-5 sm:px-6 md:px-10">
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-14">
-          {/* Left: Direct contact info & verified social profiles */}
           <RevealOnScroll
             yOffset={22}
             className="flex flex-col justify-between lg:col-span-5"
@@ -70,7 +70,8 @@ export function SocialAndContactSection() {
               <h2 className="font-editorial mt-2.5 text-balance text-3xl font-medium leading-tight text-[#2B1F1E] sm:text-4xl">
                 Conecta directamente con {CLIENT_PROFILE.brandName}
               </h2>
-              <p className="mt-3.5 text-sm leading-relaxed text-[#2B1F1E]/80">
+              <EditorialHairline className="mt-4 bg-[#B77A7D]/70" delay={0.12} />
+              <p className="mt-4 text-sm leading-relaxed text-[#2B1F1E]/80">
                 Para consultas sobre maquillaje, colaboraciones o información
                 directa, utiliza sus canales verificados.
               </p>
@@ -78,7 +79,7 @@ export function SocialAndContactSection() {
               <div className="mt-8 space-y-5 border-t border-[#2B1F1E]/12 pt-7">
                 <a
                   href={CLIENT_PROFILE.phoneHref}
-                  className="flex min-h-[52px] items-center gap-4 rounded-2xl border border-[#B77A7D]/25 bg-[#FFFBF7] px-4 py-3 transition-all duration-200 hover:-translate-y-0.5 hover:border-[#2B1F1E]"
+                  className="flex min-h-[52px] items-center gap-4 rounded-2xl border border-[#B77A7D]/25 bg-[#FFFBF7] px-4 py-3 transition-all duration-300 hover:-translate-y-0.5 hover:border-[#2B1F1E] hover:shadow-sm"
                 >
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#F3E6DA] text-[#8A4F53]">
                     <Phone className="h-4 w-4" aria-hidden="true" />
@@ -91,7 +92,7 @@ export function SocialAndContactSection() {
                   </div>
                 </a>
 
-                <div className="flex min-h-[52px] items-center justify-between gap-3 rounded-2xl border border-[#B77A7D]/25 bg-[#FFFBF7] px-4 py-3 transition-all duration-200 hover:border-[#2B1F1E]">
+                <div className="flex min-h-[52px] items-center justify-between gap-3 rounded-2xl border border-[#B77A7D]/25 bg-[#FFFBF7] px-4 py-3 transition-all duration-300 hover:border-[#2B1F1E]">
                   <a
                     href={CLIENT_PROFILE.emailHref}
                     className="flex min-w-0 items-center gap-4"
@@ -142,7 +143,6 @@ export function SocialAndContactSection() {
               </div>
             </div>
 
-            {/* Social Media cards */}
             <div className="mt-8 border-t border-[#2B1F1E]/12 pt-7">
               <p className="text-xs font-medium text-[#2B1F1E]/65">
                 Redes sociales verificadas
@@ -152,7 +152,7 @@ export function SocialAndContactSection() {
                   href={CLIENT_PROFILE.socials.instagram}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex min-h-[50px] items-center justify-between rounded-2xl border border-[#B77A7D]/25 bg-[#FFFBF7] px-4 py-3 transition-all duration-200 hover:-translate-y-0.5 hover:border-[#2B1F1E]"
+                  className="group flex min-h-[50px] items-center justify-between rounded-2xl border border-[#B77A7D]/25 bg-[#FFFBF7] px-4 py-3 transition-all duration-300 hover:-translate-y-0.5 hover:border-[#2B1F1E]"
                 >
                   <span className="flex items-center gap-3">
                     <InstagramIcon className="h-4 w-4 text-[#8A4F53]" />
@@ -161,7 +161,7 @@ export function SocialAndContactSection() {
                     </span>
                   </span>
                   <ArrowUpRight
-                    className="h-4 w-4 text-[#2B1F1E]/50 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                    className="h-4 w-4 text-[#2B1F1E]/50 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
                     aria-hidden="true"
                   />
                 </a>
@@ -170,7 +170,7 @@ export function SocialAndContactSection() {
                   href={CLIENT_PROFILE.socials.facebook}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex min-h-[50px] items-center justify-between rounded-2xl border border-[#B77A7D]/25 bg-[#FFFBF7] px-4 py-3 transition-all duration-200 hover:-translate-y-0.5 hover:border-[#2B1F1E]"
+                  className="group flex min-h-[50px] items-center justify-between rounded-2xl border border-[#B77A7D]/25 bg-[#FFFBF7] px-4 py-3 transition-all duration-300 hover:-translate-y-0.5 hover:border-[#2B1F1E]"
                 >
                   <span className="flex items-center gap-3">
                     <FacebookIcon className="h-4 w-4 text-[#8A4F53]" />
@@ -179,7 +179,7 @@ export function SocialAndContactSection() {
                     </span>
                   </span>
                   <ArrowUpRight
-                    className="h-4 w-4 text-[#2B1F1E]/50 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                    className="h-4 w-4 text-[#2B1F1E]/50 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
                     aria-hidden="true"
                   />
                 </a>
@@ -188,7 +188,7 @@ export function SocialAndContactSection() {
                   href={CLIENT_PROFILE.socials.youtube}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex min-h-[50px] items-center justify-between rounded-2xl border border-[#B77A7D]/25 bg-[#FFFBF7] px-4 py-3 transition-all duration-200 hover:-translate-y-0.5 hover:border-[#2B1F1E]"
+                  className="group flex min-h-[50px] items-center justify-between rounded-2xl border border-[#B77A7D]/25 bg-[#FFFBF7] px-4 py-3 transition-all duration-300 hover:-translate-y-0.5 hover:border-[#2B1F1E]"
                 >
                   <span className="flex items-center gap-3">
                     <YouTubeIcon className="h-4 w-4 text-[#8A4F53]" />
@@ -197,7 +197,7 @@ export function SocialAndContactSection() {
                     </span>
                   </span>
                   <ArrowUpRight
-                    className="h-4 w-4 text-[#2B1F1E]/50 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                    className="h-4 w-4 text-[#2B1F1E]/50 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
                     aria-hidden="true"
                   />
                 </a>
@@ -205,7 +205,6 @@ export function SocialAndContactSection() {
             </div>
           </RevealOnScroll>
 
-          {/* Right: Direct Email Inquiry Composer */}
           <RevealOnScroll
             delay={0.08}
             yOffset={22}
@@ -237,7 +236,7 @@ export function SocialAndContactSection() {
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     placeholder="Nombre y apellido"
-                    className="mt-2 min-h-[48px] w-full rounded-xl border border-[#2B1F1E]/18 bg-[#F3E6DA]/30 px-4 py-3 text-sm text-[#2B1F1E] placeholder:text-[#2B1F1E]/40 focus:border-[#8A4F53] focus:bg-[#FFFFFF] focus:outline-none"
+                    className="mt-2 min-h-[48px] w-full rounded-xl border border-[#2B1F1E]/18 bg-[#F3E6DA]/30 px-4 py-3 text-sm text-[#2B1F1E] transition-colors placeholder:text-[#2B1F1E]/40 focus:border-[#8A4F53] focus:bg-[#FFFFFF] focus:outline-none"
                   />
                 </div>
 
@@ -254,7 +253,7 @@ export function SocialAndContactSection() {
                     value={senderEmail}
                     onChange={(e) => setSenderEmail(e.target.value)}
                     placeholder="tu@correo.com"
-                    className="mt-2 min-h-[48px] w-full rounded-xl border border-[#2B1F1E]/18 bg-[#F3E6DA]/30 px-4 py-3 text-sm text-[#2B1F1E] placeholder:text-[#2B1F1E]/40 focus:border-[#8A4F53] focus:bg-[#FFFFFF] focus:outline-none"
+                    className="mt-2 min-h-[48px] w-full rounded-xl border border-[#2B1F1E]/18 bg-[#F3E6DA]/30 px-4 py-3 text-sm text-[#2B1F1E] transition-colors placeholder:text-[#2B1F1E]/40 focus:border-[#8A4F53] focus:bg-[#FFFFFF] focus:outline-none"
                   />
                 </div>
               </div>
@@ -272,45 +271,53 @@ export function SocialAndContactSection() {
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                   placeholder="Cuéntale a Michelle sobre el servicio o consulta que necesitas..."
-                  className="mt-2 w-full rounded-xl border border-[#2B1F1E]/18 bg-[#F3E6DA]/30 px-4 py-3 text-sm text-[#2B1F1E] placeholder:text-[#2B1F1E]/40 focus:border-[#8A4F53] focus:bg-[#FFFFFF] focus:outline-none"
+                  className="mt-2 w-full rounded-xl border border-[#2B1F1E]/18 bg-[#F3E6DA]/30 px-4 py-3 text-sm text-[#2B1F1E] transition-colors placeholder:text-[#2B1F1E]/40 focus:border-[#8A4F53] focus:bg-[#FFFFFF] focus:outline-none"
                 />
               </div>
 
-              {error && (
-                <p
-                  role="alert"
-                  className="rounded-xl border border-[#B77A7D]/50 bg-[#E8C5C0]/35 px-4 py-3 text-xs font-medium text-[#2B1F1E]"
-                >
-                  {error}
-                </p>
-              )}
+              <AnimatePresence>
+                {error && (
+                  <motion.p
+                    initial={{opacity: 0, y: -6}}
+                    animate={{opacity: 1, y: 0}}
+                    exit={{opacity: 0, y: -6}}
+                    role="alert"
+                    className="rounded-xl border border-[#B77A7D]/50 bg-[#E8C5C0]/35 px-4 py-3 text-xs font-medium text-[#2B1F1E]"
+                  >
+                    {error}
+                  </motion.p>
+                )}
 
-              {submitted && !error && (
-                <div
-                  role="status"
-                  className="rounded-xl border border-[#2B1F1E]/15 bg-[#F3E6DA]/70 px-4 py-3 text-xs leading-relaxed text-[#2B1F1E]"
-                >
-                  <p className="font-medium">
-                    Se preparó tu mensaje para {CLIENT_PROFILE.email}.
-                  </p>
-                  <p className="mt-1 text-[#2B1F1E]/75">
-                    Si tu gestor de correo no se abrió automáticamente, puedes
-                    escribir directamente a{' '}
-                    <a
-                      href={CLIENT_PROFILE.emailHref}
-                      className="underline underline-offset-2"
-                    >
-                      {CLIENT_PROFILE.email}
-                    </a>{' '}
-                    o llamar al {CLIENT_PROFILE.phoneDisplay}.
-                  </p>
-                </div>
-              )}
+                {submitted && !error && (
+                  <motion.div
+                    initial={{opacity: 0, y: -6}}
+                    animate={{opacity: 1, y: 0}}
+                    exit={{opacity: 0, y: -6}}
+                    role="status"
+                    className="rounded-xl border border-[#2B1F1E]/15 bg-[#F3E6DA]/70 px-4 py-3 text-xs leading-relaxed text-[#2B1F1E]"
+                  >
+                    <p className="font-medium">
+                      Se preparó tu mensaje para {CLIENT_PROFILE.email}.
+                    </p>
+                    <p className="mt-1 text-[#2B1F1E]/75">
+                      Si tu gestor de correo no se abrió automáticamente, puedes
+                      escribir directamente a{' '}
+                      <a
+                        href={CLIENT_PROFILE.emailHref}
+                        className="underline underline-offset-2"
+                      >
+                        {CLIENT_PROFILE.email}
+                      </a>{' '}
+                      o llamar al {CLIENT_PROFILE.phoneDisplay}.
+                    </p>
+                  </motion.div>
+                )}
+              </AnimatePresence>
 
               <div className="pt-1">
                 <button
                   type="submit"
-                  className="inline-flex min-h-[48px] w-full items-center justify-center rounded-full bg-[#2B1F1E] px-7 py-3.5 text-sm font-medium text-[#FFFBF7] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#4A3533] active:scale-[0.98] sm:w-auto focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#B77A7D]"
+                  className="inline-flex min-h-[48px] w-full items-center justify-center rounded-full bg-[#2B1F1E] px-7 py-3.5 text-sm font-medium text-[#FFFBF7] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#4A3533] active:scale-[0.98] sm:w-auto focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#B77A7D]"
                 >
                   Abrir consulta por correo
                 </button>
